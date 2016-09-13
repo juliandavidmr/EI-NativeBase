@@ -2,34 +2,75 @@
 
 import React, { Component } from 'react';
 
-import { Container, Header, Title, Button, Icon } from 'native-base';
+import {
+  View,
+  Text,
+  TouchableHighlight,
+  StyleSheet,
+  Alert,
+  Navigator
+} from 'react-native';
 
 export class ListContactsView extends Component {
 
-  constructor(props) {
-    super(props);
+  onLogin() {
+    console.log('Hola');
 
+    Alert.alert(
+      'Acceso',
+      'Te has logueado',
+      [
+        {
+          text: 'Aceptar',
+          onPress: (this.aceptar.bind(this))
+        }, {
+          text: 'Cancelar',
+          onPress: (this.cancelar.bind(this))
+        }        
+      ]
+    );
   }
 
-  subMenu() {
-    console.log('Presionado');
+  aceptar() {
+    console.log('Aceptado');
+
+    this.props.navigator.push({
+      title: 'DashBoard',
+      name: 'DashBoard',
+      passProps: {}
+    });
+  }
+
+  cancelar() {
+    console.log('Cancelar');
   }
 
   render() {
     return (
-      <Container>
-        <Header>
-          <Button transparent onPress={(this.subMenu.bind(this))}>
-            <Icon name='ios-arrow-back' />
-          </Button>
+      <View>
+        <Text>Componente de DashBoard</Text>
 
-          <Title>Header</Title>
-
-          <Button transparent>
-            <Icon name='ios-menu' />
-          </Button>
-        </Header>
-      </Container>
+        <TouchableHighlight onPress={(this.onLogin.bind(this)) } style={styles.boton}>
+          <Text style={styles.textBoton}>Login</Text>
+        </TouchableHighlight>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  boton: {
+    width: 300,
+    height: 30,
+    backgroundColor: 'red',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    marginBottom: 10,
+    borderRadius: 8,
+    borderWidth: 1
+  },
+  textBoton: {
+    color: 'white'
+  }
+});
