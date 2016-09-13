@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/julian/Documentos/NativeBase/App/android/app/build/intermediates/exploded-aar/App/react-native-vector-icons/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6133990026ecd31fe44178248ad68f5bab8e73f5">
+        <dex dex="/home/julian/Documentos/NativeBase/App/android/app/build/intermediates/pre-dexed/debug/classes-a523db6f3883dc6fbd8b3a76fccafae0335b6bb3.jar" />
+    </item>
+
+</items>
